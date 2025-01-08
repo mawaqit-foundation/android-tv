@@ -32,7 +32,7 @@ import 'package:mawaqit/src/routes/routes_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AudioControlWidget extends ConsumerWidget {
+/* class AudioControlWidget extends ConsumerWidget {
   final double buttonSize;
   final double iconSize;
   final FocusNode scheduleListeningFocusNode;
@@ -98,7 +98,7 @@ class AudioControlWidget extends ConsumerWidget {
         );
   }
 }
-
+ */
 class ReciterSelectionScreen extends ConsumerStatefulWidget {
   final String surahName;
 
@@ -194,7 +194,8 @@ class _ReciterSelectionScreenState extends ConsumerState<ReciterSelectionScreen>
 
   @override
   Widget build(BuildContext context) {
-    final audioState = ref.watch(audioControlProvider);
+/*     final audioState = ref.watch(audioControlProvider);
+ */
     final buttonSize = MediaQuery.of(context).size.width * 0.07;
     final iconSize = buttonSize * 0.5;
     final spacerWidth = buttonSize * 0.25;
@@ -204,7 +205,7 @@ class _ReciterSelectionScreenState extends ConsumerState<ReciterSelectionScreen>
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          ref.watch(reciteNotifierProvider).whenOrNull(
+/*           ref.watch(reciteNotifierProvider).whenOrNull(
                     data: (reciter) => SizedBox(
                       width: buttonSize,
                       height: buttonSize,
@@ -224,7 +225,7 @@ class _ReciterSelectionScreenState extends ConsumerState<ReciterSelectionScreen>
                       ),
                     ),
                   ) ??
-              const SizedBox.shrink(),
+              const SizedBox.shrink(), */
           SizedBox(width: spacerWidth),
           SizedBox(
             width: buttonSize,
@@ -252,11 +253,11 @@ class _ReciterSelectionScreenState extends ConsumerState<ReciterSelectionScreen>
           SizedBox(
             width: spacerWidth,
           ),
-          AudioControlWidget(
+/*           AudioControlWidget(
             buttonSize: buttonSize,
             iconSize: iconSize,
             scheduleListeningFocusNode: scheduleListeningFocusNode,
-          )
+          ) */
         ],
       ),
       appBar: AppBar(

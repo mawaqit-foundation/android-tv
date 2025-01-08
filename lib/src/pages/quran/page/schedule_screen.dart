@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mawaqit/i18n/l10n.dart';
 import 'package:mawaqit/src/pages/quran/widget/schedule_screen_widgets/custom_scheduling_drop_down.dart';
@@ -304,3 +304,4 @@ class _ScheduleScreenState extends ConsumerState<ScheduleScreen> {
     );
   }
 }
+ */

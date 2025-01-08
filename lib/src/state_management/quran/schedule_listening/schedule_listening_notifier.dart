@@ -1,4 +1,4 @@
-import 'dart:math';
+/* import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mawaqit/src/services/background_audio_schedule_service.dart';
@@ -351,3 +351,4 @@ class ScheduleNotifier extends AsyncNotifier<ScheduleState> {
 final scheduleProvider = AsyncNotifierProvider<ScheduleNotifier, ScheduleState>(
   () => ScheduleNotifier(),
 );
+ */
