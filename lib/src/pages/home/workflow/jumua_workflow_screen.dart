@@ -34,14 +34,14 @@ class JumuaaWorkflowScreen extends StatelessWidget {
           skip: now.isAfter(jumuaaTime),
         ),
 
-        WorkFlowItem(
+/*         WorkFlowItem(
           builder: (context, next) => JummuaLive(onDone: next),
           skip: now.isAfter(jumuaaEndTime),
 
           /// handle if user open screen during the jumuaa
           duration: now.isBefore(jumuaaTime) ? Duration(minutes: jumuaaTimeout) : jumuaaEndTime.difference(now),
         ),
-
+ */
         // salah time after jumuaa
         WorkFlowItem(
           builder: (context, next) => NormalHomeSubScreen(),

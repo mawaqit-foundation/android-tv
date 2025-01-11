@@ -1,4 +1,4 @@
-import 'dart:developer';
+/* import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,8 +10,8 @@ import 'package:mawaqit/src/state_management/rtsp_camera_stream/rtsp_camera_stre
 import 'package:mawaqit/src/state_management/rtsp_camera_stream/rtsp_camera_stream_state.dart';
 import 'package:mawaqit/src/state_management/quran/quran/quran_notifier.dart';
 import 'package:mawaqit/src/themes/UIShadows.dart';
-import 'package:media_kit/media_kit.dart';
-import 'package:media_kit_video/media_kit_video.dart';
+/* import 'package:media_kit/media_kit.dart';
+import 'package:media_kit_video/media_kit_video.dart'; */
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -123,7 +123,7 @@ class _JummuaLiveState extends ConsumerState<JummuaLive> {
 
     // Priority 1: RTSP Stream if working
     if (isRTSPWorking) {
-      return Scaffold(
+/*       return Scaffold(
         backgroundColor: Colors.black,
         body: Center(
           child: AspectRatio(
@@ -133,7 +133,7 @@ class _JummuaLiveState extends ConsumerState<JummuaLive> {
             ),
           ),
         ),
-      );
+      ); */
     }
 
     // Priority 2: YouTube Stream from RTSP settings if working
@@ -165,3 +165,4 @@ class _JummuaLiveState extends ConsumerState<JummuaLive> {
     return const Scaffold(backgroundColor: Colors.black);
   }
 }
+ */

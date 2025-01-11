@@ -220,9 +220,9 @@ class _SettingScreenState extends ConsumerState<SettingScreen> {
                               title: checkInternet,
                               content: S.of(context).checkInternetLiveCamera,
                             );
-                          } else {
+                          } /* else {
                             AppRouter.push(RTSPCameraSettingsScreen());
-                          }
+                          } */
                         },
                       );
                     },

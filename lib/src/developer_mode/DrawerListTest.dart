@@ -121,13 +121,13 @@ class DrawerListDeveloper extends StatelessWidget {
             child: AnnouncementTest(),
           )),
         ),
-        DrawerListTitle(
+/*         DrawerListTitle(
           icon: Icons.live_tv,
           text: S.of(context).jumuaaLive,
           onTap: () => AppRouter.popAndPush(
             MosqueBackgroundScreen(child: JummuaLive()),
           ),
-        ),
+        ), */
 
         SwitchListTile(
           value: userPreferencesManager.forceStaging,

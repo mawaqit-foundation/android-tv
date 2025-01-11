@@ -65,8 +65,12 @@ class _DeveloperScreenState extends State<DeveloperScreen> {
         (builder: (context) => IqamaSubScreen(), name: S.current.iqama),
         (builder: (context) => AfterSalahAzkar(), name: S.current.afterSalahAzkar),
         (builder: (context) => JumuaHadithSubScreen(), name: S.current.jumua),
-        (builder: (context) => JummuaLive(), name: S.current.jumuaaLive),
-        (builder: (context) => FajrWakeUpSubScreen(), name: S.current.fajrWakeUp),
+/*         (builder: (context) => JummuaLive(), name: S.current.jumuaaLive),
+ */
+        (
+          builder: (context) => FajrWakeUpSubScreen(),
+          name: S.current.fajrWakeUp
+        ),
         (builder: (context) => DuaaEftarScreen(), name: S.current.duaaElEftar),
       ];
 

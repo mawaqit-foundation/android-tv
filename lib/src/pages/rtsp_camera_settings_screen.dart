@@ -1,4 +1,4 @@
-import 'dart:async';
+/* import 'dart:async';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -8,7 +8,8 @@ import 'package:mawaqit/src/domain/error/rtsp_expceptions.dart';
 import 'package:mawaqit/src/state_management/rtsp_camera_stream/rtsp_camera_stream_notifier.dart';
 import 'package:mawaqit/src/state_management/rtsp_camera_stream/rtsp_camera_stream_state.dart';
 import 'package:mawaqit/src/widgets/ScreenWithAnimation.dart';
-import 'package:media_kit_video/media_kit_video.dart';
+/* import 'package:media_kit_video/media_kit_video.dart';
+ */
 import 'package:sizer/sizer.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -234,7 +235,8 @@ class _RTSPCameraSettingsScreenState extends ConsumerState<RTSPCameraSettingsScr
       return YoutubePlayer(controller: state.youtubeController!);
     }
     if (state.videoController != null) {
-      return Video(controller: state.videoController!);
+/*       return Video(controller: state.videoController!);
+ */
     }
     return const SizedBox.shrink();
   }
@@ -333,3 +335,4 @@ class _RTSPCameraSettingsScreenState extends ConsumerState<RTSPCameraSettingsScr
     );
   }
 }
+ */
