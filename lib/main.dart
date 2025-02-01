@@ -99,7 +99,7 @@ class _MyAppState extends riverpod.ConsumerState<MyApp> with WidgetsBindingObser
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    BackgroundService.setNotificationVisibility(false);
+    NotificationBackgroundService.setNotificationVisibility(false);
   }
 
   @override
@@ -110,7 +110,7 @@ class _MyAppState extends riverpod.ConsumerState<MyApp> with WidgetsBindingObser
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    BackgroundService().didChangeAppLifecycleState(state);
+    NotificationBackgroundService().didChangeAppLifecycleState(state);
   }
 
   @override
