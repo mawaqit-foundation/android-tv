@@ -85,18 +85,18 @@ Future<void> main() async {
 }
 
 Future<void> _initializePermissions() async {
-  final isRooted =
+/*   final isRooted =
       await MethodChannel(TurnOnOffTvConstant.kNativeMethodsChannel).invokeMethod(TurnOnOffTvConstant.kCheckRoot);
 
-  final bool isPermissionGranted = await NotificationOverlay.checkOverlayPermission();
+  final bool isPermissionGranted = await NotificationOverlay.checkOverlayPermission(); */
 
-  if (!isPermissionGranted) {
-    if (isRooted) {
+/*   if (!isPermissionGranted) {
+    if (isRooted) { */
       await MethodChannel(TurnOnOffTvConstant.kNativeMethodsChannel).invokeMethod("grantOverlayPermission");
-    } else {
+  /*    } else {
       await NotificationOverlay.requestOverlayPermission();
     }
-  }
+  } */
 
   await NotificationBackgroundService.initializeService();
 }
