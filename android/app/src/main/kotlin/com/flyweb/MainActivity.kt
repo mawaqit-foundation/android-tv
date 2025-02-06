@@ -59,7 +59,10 @@ class MainActivity : FlutterActivity() {
                     "connectToNetworkWPA" -> connectToNetworkWPA(call, result)
                     "addLocationPermission" -> addLocationPermission(call, result)
                     "grantFineLocationPermission" -> grantFineLocationPermission(call, result)
-                    "grantOverlayPermission" -> grantOverlayPermission(call, result)
+                    "grantOverlayPermission" -> {
+                        val isSuccess = grantOverlayPermission()
+                        result.success(isSuccess)
+                    }
                     "sendDownArrowEvent" -> sendDownArrowEvent(call, result)
                     "sendTabKeyEvent" -> sendTabKeyEvent(call, result)
                     "clearAppData" -> {
@@ -295,19 +298,44 @@ fun connectToNetworkWPA(call: MethodCall, result: MethodChannel.Result) {
             }
         }
     }
-    private fun grantOverlayPermission(call: MethodCall, result: MethodChannel.Result) {
-        AsyncTask.execute {
-            try {
-                val commands = listOf(
-                    "appops set com.mawaqit.androidtv SYSTEM_ALERT_WINDOW allow",
-                   
-                )
-                executeCommand(commands, result) // Lock the device
-            } catch (e: Exception) {
-                handleCommandException(e, result)
-            }
+private fun grantOverlayPermission(): Boolean {
+    return try {
+        Log.d("OverlayPermission", "Attempting to grant overlay permission")
+        val processBuilder = ProcessBuilder()
+        val command = "sh -c appops set com.mawaqit.androidtv SYSTEM_ALERT_WINDOW allow"
+        Log.d("OverlayPermission", "Executing command: $command")
+        
+        processBuilder.command("sh", "-c", """
+            appops set com.mawaqit.androidtv SYSTEM_ALERT_WINDOW allow
+        """.trimIndent())
+        
+        val process = processBuilder.start()
+        val exitCode = process.waitFor()
+        
+        // Read error stream
+        val errorReader = BufferedReader(InputStreamReader(process.errorStream))
+        val errorOutput = errorReader.readText()
+        if (errorOutput.isNotEmpty()) {
+            Log.e("OverlayPermission", "Error output: $errorOutput")
         }
+        
+        // Read input stream
+        val inputReader = BufferedReader(InputStreamReader(process.inputStream))
+        val inputOutput = inputReader.readText()
+        if (inputOutput.isNotEmpty()) {
+            Log.d("OverlayPermission", "Standard output: $inputOutput")
+        }
+        
+        Log.d("OverlayPermission", "Process exit code: $exitCode")
+        exitCode == 0
+    } catch (e: Exception) {
+        Log.e("OverlayPermission", "Exception occurred: ${e.message}")
+        e.printStackTrace()
+        false
     }
+}
+
+    
 
     private fun toggleBoxScreenOn(call: MethodCall, result: MethodChannel.Result) {
         AsyncTask.execute {

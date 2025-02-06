@@ -93,10 +93,10 @@ Future<void> _initializePermissions() async {
 /*   if (!isPermissionGranted) {
     if (isRooted) { */
       await MethodChannel(TurnOnOffTvConstant.kNativeMethodsChannel).invokeMethod("grantOverlayPermission");
-  /*    } else {
+  /*   } else {
       await NotificationOverlay.requestOverlayPermission();
-    }
-  } */
+    } */
+  /* } */
 
   await NotificationBackgroundService.initializeService();
 }
